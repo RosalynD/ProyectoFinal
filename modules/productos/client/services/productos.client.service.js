@@ -9,7 +9,7 @@
   ProductosService.$inject = ['$resource'];
 
   function ProductosService($resource) {
-    return $resource('api/productos/:productoId', {
+    return $resource('/api/productos/:productoId', {
       productoId: '@_id'
     }, {
       update: {

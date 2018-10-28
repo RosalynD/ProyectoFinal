@@ -54,14 +54,14 @@ var ProductoSchema = new Schema({
   }
 });
 
-//ProductoSchema.statics.seed = seed;
+ProductoSchema.statics.seed = seed;
 
 
 mongoose.model('Producto', ProductoSchema);
 
-/*
-* Seeds the Product collection with document (Product)
-* and provided options.
+
+//* Seeds the Product collection with document (Product)
+//* and provided options.
 
 function seed(doc, options) {
   var Producto = mongoose.model('Producto');
@@ -123,4 +123,4 @@ function seed(doc, options) {
     }
   });
 }
-*/
+
