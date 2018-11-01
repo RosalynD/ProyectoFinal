@@ -1,0 +1,75 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.producto._id ? 'Edit Producto' : 'New Product'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.productoForm" class="" ng-submit="vm.save(vm.form.productoForm.$valid)" novalidate>
+      <fieldset>
+        <div class = "row">
+          <div class = "col-sm-6 text-center">
+            <i class="glyphicon glyphicon-phone cust-profile" 
+            ng-class ="{'text-primary': referred, 'text-danger': !referred}" ></i>
+          </div>
+          <div class = "col-sm-6">
+              <div class="form-group" show-errors>
+                  <label class="control-label" for="price">Price</label>
+                  <input name="price" type="text" ng-model="vm.producto.price" id="price" class="form-control" required>
+                  <div ng-messages="vm.form.productoForm.price.$error" role="alert">
+                    <p class="help-block error-text" ng-message="required">Product price is required.</p>
+                  </div>
+                </div>
+                <div class="form-group" show-errors>
+                    <label class="control-label" for="category">Category</label>
+                    <input name="category" type="text" ng-model="vm.producto.category" id="category" class="form-control" required>
+                    <div ng-messages="vm.form.productoForm.category.$error" role="alert">
+                      <p class="help-block error-text" ng-message="required">Category is required.</p>
+                    </div>
+                  </div>
+                  <div class="form-group" show-errors>
+                    <label class="control-label" for="image">Image</label>
+                    <input name="image" type="text" ng-model="vm.producto.imgurl" id="imgurl" class="form-control" required>
+                    <div ng-messages="vm.form.productoForm.imgurl.$error" role="alert">
+                      <p class="help-block error-text" ng-message="required">Url is required.</p>
+                    </div>
+                  </div>
+                  <div class="form-group" show-errors>
+                      <label class="control-label" for="subcategory">Subcategory</label>
+                      <input name="subcategory" type="text" ng-model="vm.producto.subcategory" id="subcategory" class="form-control" required>
+                      <div ng-messages="vm.form.productoForm.subcategory.$error" role="alert">
+                        <p class="help-block error-text" ng-message="required">Subcategory is required.</p>
+                      </div>
+                    </div>
+                    <div class="form-group" show-errors>
+                        <label class="control-label" for="description">Description</label>
+                        <input name="description" type="text" ng-model="vm.producto.description" id="description" class="form-control" required>
+                        <div ng-messages="vm.form.productoForm.description.$error" role="alert">
+                          <p class="help-block error-text" ng-message="required">Description is required.</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-sm-6">
+              <div class="form-group" show-errors>
+                <label class="control-label" for="name">Name</label>
+                <input name="name" type="text" ng-model="vm.producto.name" id="name" class="form-control" required>
+                <div ng-messages="vm.form.productoForm.name.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required">Product name is required.</p>
+                </div>
+              </div>
+            </div>
+            <div class = "col-sm-6">
+              <div class="form-group">
+                <button type="submit" class="btn btn-lg btn-success">{{vm.producto._id ? 'Update' : 'Create'}}</button>
+              </div>
+              <div ng-show="vm.error" class="text-danger">
+                <strong ng-bind="vm.error"></strong>
+              </div>
+            </div>
+          </div>
+        
+  </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

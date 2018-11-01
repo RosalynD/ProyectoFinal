@@ -1,0 +1,51 @@
+<div>
+  <div class="col-xs-offset-1 col-xs-10 col-md-offset-4 col-md-4 login-form-bg">
+    <h3 class="text-center">Login</h3>
+    <form name="vm.userForm" ng-submit="vm.signin(vm.userForm.$valid)" class="signin" novalidate autocomplete="off">
+      <fieldset>
+        <div data-ng-show="error" class="text-center text-danger">
+          <div class="alert alert-danger" role ="alert">
+            <strong data-ng-bind="error"></strong>
+          </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group input-group-lg" show-errors>
+                <span class="input-group-addon">
+                  <i class="text-muted glyphicon glyphicon-user"></i>
+                </span>
+              <uib-alert type="danger" ng-show="vm.error" class="text-center text-danger">
+                <span ng-bind="vm.error"></span>
+              </uib-alert>
+              <input type="text" id="usernameOrEmail" name="usernameOrEmail" class="form-control" ng-model="vm.credentials.usernameOrEmail" placeholder="Username or Email" required autofocus>
+              <div ng-messages="vm.userForm.usernameOrEmail.$error" role="alert">
+                <p class="help-block error-text" ng-message="required">Username or Email is required.</p>
+              </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group input-group-lg" show-errors>
+                <span class="input-group-addon">
+                    <i class="text-muted glyphicon glyphicon-asterisk"></i>
+                  </span>
+             
+              <input type="password" id="password" name="password" class="form-control" ng-model="vm.credentials.password" placeholder="Password" required>
+              <div ng-messages="vm.userForm.password.$error" role="alert">
+                <p class="help-block error-text" ng-message="required">Password is required.</p>
+              </div>
+            </div>
+        </div>
+        
+        
+        <div class="text-center form-group">
+          <button type="submit" class="btn btn-success btn-lg btn-block">Sign in</button>
+          
+        </div>
+        <div class="text-center forgot-password">
+          <a ui-sref="password.forgot">Forgot your password?</a> &nbsp; Or &nbsp;
+          <a ui-sref="authentication.signup">Sign up</a>
+        </div>
+        <br />
+      </fieldset>
+    </form>
+  </div>
+</div>
