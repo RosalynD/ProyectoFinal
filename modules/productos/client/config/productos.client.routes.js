@@ -38,7 +38,7 @@
       })
       .state('productos.edit', {
         url: '/:productoId/edit',
-        templateUrl: 'modules/productos/client/views/form-producto.client.view.html',
+        templateUrl: 'modules/productos/client/views/edit-producto.client.view.html',
         controller: 'ProductosController',
         controllerAs: 'vm',
         resolve: {

@@ -1,3 +1,18 @@
 .cust-profile {
     font-size: 250px;
 }
+.product-picture {
+    max-height: 300px;
+    min-height: 300px;
+    max-width: 300px;
+    min-width: 300px;
+  }
+.productlist-picture {
+    max-height: 175px;
+    min-height: 175px;
+    max-width: 175px;
+    min-width: 175px;
+  }
+.cust-list{
+    font-size:100px;
+}

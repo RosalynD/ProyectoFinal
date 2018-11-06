@@ -32,13 +32,20 @@
                         <p class="help-block error-text" ng-message="required">Subcategory is required.</p>
                       </div>
                     </div>
-                    <div class="form-group" show-errors>
-                        <label class="control-label" for="description">Description</label>
-                        <input name="description" type="text" ng-model="vm.producto.description" id="description" class="form-control" required>
-                        <div ng-messages="vm.form.productoForm.description.$error" role="alert">
-                          <p class="help-block error-text" ng-message="required">Description is required.</p>
-                        </div>
+                  <div class="form-group" show-errors>
+                      <label class="control-label" for="image">Image</label>
+                      <input name="image" type="text" ng-model="vm.producto.imgurl" id="imgurl" class="form-control" required>
+                      <div ng-messages="vm.form.productoForm.imgurl.$error" role="alert">
+                        <p class="help-block error-text" ng-message="required">Url is required.</p>
+                      </div>
                     </div>
+                  <div class="form-group" show-errors>
+                      <label class="control-label" for="description">Description</label>
+                      <input name="description" type="text" ng-model="vm.producto.description" id="description" class="form-control" required>
+                      <div ng-messages="vm.form.productoForm.description.$error" role="alert">
+                        <p class="help-block error-text" ng-message="required">Description is required.</p>
+                      </div>
+                  </div>
             </div>
         </div>
         <div class = "row">

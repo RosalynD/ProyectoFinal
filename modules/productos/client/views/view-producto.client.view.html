@@ -2,6 +2,30 @@
   <div class="page-header">
     <h1 ng-bind="vm.producto.name"></h1>
   </div>
+  <div class="pull-left">
+    
+    <img ngf-src="vm.fileSelected ? picFile : vm.producto.imgurl" 
+    alt="{{vm.producto.nombre}}" class=" img-thumbnail product-picture" ngf-drop>
+<div>
+    <small>
+        <em class="col-aling-center text-muted text-center">
+          Posted on
+          <span ng-bind="vm.producto.created | date:'mediumDate'"></span>
+          by
+          <span ng-if="vm.producto.user"
+                ng-bind="vm.producto.user.displayName"></span>
+          <span ng-if="!vm.producto.user">Chris</span>
+        </em>
+      </small>
+    </div>
+    <div class="text-center form-group">
+        <button type="button" class= "pull-right btn btn-success btn-block ">
+          <i class="glyphicon glyphicon-shopping-cart"></i><br>
+          Add to Cart
+        </button>
+      </div>
+        
+  </div>
   <div class="pull-right"
        ng-show="vm.producto.isCurrentUserOwner">
     <a class="btn btn-primary"
@@ -12,15 +36,7 @@
       <i class="glyphicon glyphicon-trash"></i>
     </a>
   </div>
-  <small>
-    <em class="text-muted">
-      Posted on
-      <span ng-bind="vm.producto.created | date:'mediumDate'"></span>
-      by
-      <span ng-if="vm.producto.user"
-            ng-bind="vm.producto.user.displayName"></span>
-      <span ng-if="!vm.producto.user">Deleted User</span>
-    </em>
-  </small>
+  
   <p class="lead" ng-bind="vm.producto.content"></p>
+  
 </section>

@@ -17,29 +17,36 @@
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
-
-    /* Create new Producto
-
-    function create() {
-      var producto = new Productos ({
-        name: this.name,
-        category: this.category,
-        subcategory: this.subcategory,
-        description: this.description,
-        price: this.price,
-        
-
-
-    }
-    */
-
+    
     // Remove existing Producto
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
         vm.producto.$remove($state.go('productos.list'));
       }
     }
+   /* //Open a modal window to Update a single record
+    function modalUpdate(size, selectedItem){
+      var modalInstance = $modal.open({
+      templateUrl: 'modules/productos/client/views/edit-producto.client.view.html',
+      controller: function($scope,$modalInstance,producto){
+        $scope.producto = producto;
+      },
+      size: size,
+      resolve: {
+        producto:function(){
+          return $scope.items;
+        }
+      }
+    });
+  
 
+    modalInstance.result.then(function(selectedItem){
+      $scope.selected = selectedItem;
+    }, function(){
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  }
+*/
     // Save Producto
     function save(isValid) {
       if (!isValid) {

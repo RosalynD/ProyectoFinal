@@ -51,6 +51,12 @@ var ProductoSchema = new Schema({
   user: {
     type: Schema.ObjectId,
     ref: 'User'
+  },
+  imgurl: {
+    type: String,
+    default: '',
+    required: 'Please enter the image url',
+    trim: true
   }
 });
 
