@@ -4,7 +4,7 @@ var defaultEnvConfig = require('./default');
 
 module.exports = {
   db: {
-    uri: process.env.MONGOHQ_URL || process.env.MONGODB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/mean-dev',
+    uri: process.env.MONGOHQ_URL || process.env.MONGODB_URI || 'mongodb://admin1:adminweb@cluster0-shard-00-00-ih9fj.mongodb.net:27017,cluster0-shard-00-01-ih9fj.mongodb.net:27017,cluster0-shard-00-02-ih9fj.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true',
     options: {},
     // Enable mongoose debug mode
     debug: process.env.MONGODB_DEBUG || false
