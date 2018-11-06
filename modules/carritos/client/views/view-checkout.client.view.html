@@ -1,17 +1,17 @@
 <div>
         <div class="col-xs-offset-1 col-xs-10 col-md-offset-4 col-md-4 login-form-bg">
             <h3 class="text-center">CheckOut</h3>
-            <form name="vm.userForm" ng-submit="vm.signup(vm.userForm.$valid)" class="signin" novalidate autocomplete="off">
+            <form name="vm.form.CarritoForm" class="" ng-submit="vm.save(vm.form.carritoForm.$valid)" novalidate>
               <fieldset>
               <div class="form-group" show-errors>
                       <div class="input-group input-group-lg" show-errors>
                           <span class="input-group-addon">
                             <i class="text-muted glyphicon glyphicon-user"></i>
                           </span>
-                <input type="text" id="firstName" name="firstName" class="form-control" ng-model="vm.credentials.firstName" placeholder="NombreTitularDeTarjeta" required autofocus>
+                <input type="text" id="titularTarjeta" name="titularTarjeta" class="form-control" ng-model="vm.carrito.titularTarjeta" placeholder="NombreTitularDeTarjeta" required autofocus>
                       </div>
-                <div ng-messages="vm.userForm.firstName.$error" role="alert">
-                  <p class="help-block error-text" ng-message="required">First name is required.</p>
+                <div ng-messages="vm.form.carritoForm.titularTarjeta.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required">Titular required.</p>
                 </div>
               </div>
               <div class="form-group" show-errors>
@@ -19,10 +19,10 @@
                           <span class="input-group-addon">
                             <i class="text-muted glyphicon glyphicon-piggy-bank"></i>
                           </span>
-                <input type="text" id="lastName" name="lastName" class="form-control" ng-model="vm.credentials.lastName" placeholder="NumeroTarjeta" required>
+                <input type="text" id="numeroTarjeta" name="numeroTarjeta" class="form-control" ng-model="vm.carrito.numeroTarjeta" placeholder="NumeroTarjeta" required>
                 </div>
-                <div ng-messages="vm.userForm.lastName.$error" role="alert">
-                  <p class="help-block error-text" ng-message="required">Last name is required.</p>
+                <div ng-messages="vm.form.carritoForm.numeroTarjeta.$error" role="alert">
+                  <p class="help-block error-text" ng-message="required">NumeroTarjeta required.</p>
                 </div>
               </div>
               <div class="form-group" show-errors>
@@ -30,11 +30,9 @@
                           <span class="input-group-addon">
                             <i class="text-muted glyphicon glyphicon-calendar"></i>
                           </span>
-                <input type="email" id="email" name="email" class="form-control" ng-model="vm.credentials.email" placeholder="FechaVencimiento" lowercase required>
+                <input type="date" id="fechaVencimiento" name="fechaVencimiento" class="form-control" ng-model="vm.carrito.fechaVencimiento" placeholder="FechaVencimiento" lowercase required>
                         </div>
-                <div ng-messages="vm.userForm.email.$error" role="alert">
-                  <p class="help-block error-text" ng-message="required">Email address is required.</p>
-                  <p class="help-block error-text" ng-message="email">Email address is invalid.</p>
+                <div ng-messages="vm..form.carritoForm.fechaVencimiento.$error" role="alert">
                 </div>
               </div>
               <div class="form-group" show-errors>
@@ -42,10 +40,10 @@
                         <span class="input-group-addon">
                           <i class="text-muted glyphicon glyphicon-road"></i>
                         </span>
-              <input type="text" id="firstName" name="firstName" class="form-control" ng-model="vm.credentials.firstName" placeholder="Direccion" required autofocus>
+              <input type="text" id="direccion" name="direccion" class="form-control" ng-model="vm.carrito.direccion" placeholder="Direccion" required autofocus>
                     </div>
-              <div ng-messages="vm.userForm.firstName.$error" role="alert">
-                <p class="help-block error-text" ng-message="required">Adress required.</p>
+              <div ng-messages="vm.form.carritoForm.direccion.$error" role="alert">
+                <p class="help-block error-text" ng-message="required">Address required.</p>
               </div>
             </div>
             <div class="form-group" show-errors>
@@ -53,9 +51,9 @@
                         <span class="input-group-addon">
                           <i class="text-muted glyphicon glyphicon-home"></i>
                         </span>
-              <input type="text" id="firstName" name="firstName" class="form-control" ng-model="vm.credentials.firstName" placeholder="Ciudad" required autofocus>
+              <input type="text" id="ciudad" name="ciudad" class="form-control" ng-model="vm.carrito.ciudad" placeholder="Ciudad" required autofocus>
                     </div>
-              <div ng-messages="vm.userForm.firstName.$error" role="alert">
+              <div ng-messages="vm.form.carritoForm.ciudad.$error" role="alert">
                 <p class="help-block error-text" ng-message="required">City required.</p>
               </div>
             </div>
@@ -64,14 +62,14 @@
                         <span class="input-group-addon">
                           <i class="text-muted glyphicon glyphicon-phone"></i>
                         </span>
-              <input type="text" id="firstName" name="firstName" class="form-control" ng-model="vm.credentials.firstName" placeholder="Telefono" required autofocus>
+              <input type="text" id="telefono" name="telefono" class="form-control" ng-model="vm.carrito.telefono" placeholder="Telefono" required autofocus>
                     </div>
-              <div ng-messages="vm.userForm.firstName.$error" role="alert">
+              <div ng-messages="vm.form.carritoForm.telefono.$error" role="alert">
                 <p class="help-block error-text" ng-message="required">Telephone Number required.</p>
               </div>
             </div>
               <div class="text-center form-group">
-                <button type="button" class="btn btn-lg btn-success btn-block">Buy</button><br>
+                <button type="sumbit" class="btn btn-lg btn-success btn-block">Buy</button><br>
                 Or &nbsp;<a href="/carrito" class="btn btn-warning"><i class="fa fa-angle-left"></i> Volver</a>
             </fieldset>
           </form>

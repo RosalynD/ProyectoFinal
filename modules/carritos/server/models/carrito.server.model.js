@@ -36,7 +36,7 @@ var CarritoSchema = new Schema({
   }
 });
 
-ProductoSchema.statics.seed = seed;
+CarritoSchema.statics.seed = seed;
 
 
 mongoose.model('Carrito', CarritoSchema);
